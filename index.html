@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livie Grimaldi | Real Estate Broker & Compliance Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#1a1a1a;color:#f0f0f0;line-height:1.6;}
+a{color:#FFD700;text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* Navbar */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:#4B0082;position:sticky;top:0;z-index:1000;}
+nav .logo{font-size:1.5rem;font-weight:700;color:#FFD700;}
+nav ul{list-style:none;display:flex;gap:2rem;}
+nav ul li{font-weight:600;}
+nav ul li a{color:#f0f0f0;}
+nav ul li a:hover{color:#FFD700;}
+
+/* Hero */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:linear-gradient(135deg,#4B0082,#2E0854 60%,#FFD700);}
+.hero h1{font-size:3rem;font-weight:700;margin-bottom:1rem;color:#fff;text-shadow:0 0 10px rgba(0,0,0,0.4);}
+.hero p{font-size:1.2rem;max-width:700px;margin-bottom:2rem;color:#f0f0f0;}
+.hero .cta{background:#FFD700;color:#4B0082;padding:1rem 2rem;border-radius:50px;font-weight:700;transition:.3s;}
+.hero .cta:hover{background:#fff;color:#4B0082;cursor:pointer;transform:translateY(-3px);}
+
+/* Sections */
+section{padding:4rem 10%;border-bottom:1px solid #333;}
+section h2{font-size:2rem;color:#FFD700;margin-bottom:1.5rem;border-bottom:2px solid #FFD700;display:inline-block;padding-bottom:.3rem;}
+
+/* Resume & Cover Letter */
+.resume,.cover-letter{background:#2e2e2e;padding:2rem;border-radius:10px;margin-bottom:2rem;opacity:0;transform:translateY(50px);transition:all 1s ease;}
+.resume.visible,.cover-letter.visible{opacity:1;transform:translateY(0);}
+.resume h3,.cover-letter h3{color:#FFD700;margin-bottom:1rem;}
+.resume ul,.cover-letter ul{list-style:disc;margin-left:2rem;}
+.resume li,.cover-letter li{margin-bottom:.5rem;}
+
+/* Timeline */
+.timeline{position:relative;margin-left:1rem;}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:4px;background:#FFD700;}
+.timeline-item{margin-bottom:2rem;position:relative;padding-left:50px;opacity:0;transform:translateX(-50px);transition:all 1s ease;}
+.timeline-item.visible{opacity:1;transform:translateX(0);}
+.timeline-item::before{content:'';position:absolute;left:11px;top:0;width:18px;height:18px;background:#FFD700;border-radius:50%;}
+
+/* Lawsuit Cards */
+.lawsuits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.lawsuit-card{background:#2e2e2e;padding:1.5rem;border-radius:10px;transition:transform .3s,box-shadow .3s;opacity:0;transform:scale(0.9);}
+.lawsuit-card.visible{opacity:1;transform:scale(1);}
+.lawsuit-card:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,215,0,0.4);}
+.lawsuit-card h3{color:#FFD700;margin-bottom:.5rem;}
+.lawsuit-card a{font-weight:600;}
+
+/* Contact */
+.contact{text-align:center;}
+.contact a{margin:0 1rem;font-size:1.5rem;color:#FFD700;}
+.contact a:hover{color:#fff;}
+
+/* Footer */
+footer{text-align:center;padding:2rem;background:#4B0082;color:#FFD700;}
+
+/* ===== Chat Widget ===== */
+#chat-widget{position:fixed;bottom:20px;right:20px;z-index:1000;}
+#chat-toggle{
+ background:#4B0082;color:#FFD700;padding:0.9rem 1.5rem;border-radius:50px;
+ font-weight:700;border:none;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.6);
+ transition:all .3s;}
+#chat-toggle:hover{background:#FFD700;color:#4B0082;transform:translateY(-2px);}
+#chat-box{
+ display:none;position:absolute;bottom:70px;right:0;background:#2a1b3d;color:#fff;
+ border-radius:10px;padding:1rem;width:320px;box-shadow:0 0 12px rgba(0,0,0,0.8);
+}
+#chat-box form{display:flex;flex-direction:column;gap:.6rem;}
+#chat-box h4{color:#FFD700;text-align:center;margin-bottom:.5rem;}
+#chat-box input,#chat-box textarea{
+ background:#1f1f1f;border:1px solid #333;border-radius:6px;color:#fff;padding:.6rem;
+}
+#chat-box button{
+ background:#FFD700;color:#4B0082;border:none;padding:.7rem;border-radius:6px;
+ font-weight:700;cursor:pointer;transition:.3s;}
+#chat-box button:hover{background:#fff;color:#4B0082;}
+.chat-note{font-size:.8rem;color:#ccc;margin-top:.4rem;text-align:center;}
+
+/* Responsive */
+@media(max-width:768px){
+ nav ul{flex-direction:column;gap:1rem;}
+ .hero h1{font-size:2rem;}
+ section{padding:3rem 5%;}
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+ <div class="logo">Livie Grimaldi</div>
+ <ul>
+  <li><a href="#cover-letter">Cover Letter</a></li>
+  <li><a href="#resume">Resume</a></li>
+  <li><a href="#experience">Experience</a></li>
+  <li><a href="#lawsuits/Reports">Lawsuits</a></li>
+  <li><a href="#contact">Contact</a></li>
+ </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+ <h1>Real Estate Broker & Compliance Investigator</h1>
+ <p>Specializing in REBBA, TRESA and FSRA compliance, consumer protection and systemic fraud investigations within the real estate and mortgage sector.</p>
+ <a href="#contact" class="cta">Contact Me</a>
+</section>
+
+<!-- Cover Letter -->
+<section id="cover-letter">
+ <h2>Cover Letter</h2>
+ <div class="cover-letter">
+  <p>Dear RECO Team,</p>
+  <p>I am a licensed Real Estate Broker and former Mortgage Agent with over a decade of experience in brokerage operations, compliance audits, and consumer protection under the REBBA, TRESA, and FSRA frameworks.</p>
+  <p>Through independent investigations, I have identified breaches of fiduciary duty, commission fraud and circumvention, fraudulent misrepresentation, and the non-disclosure of material facts. I have drafted civil enforcement actions and regulatory submissions with precision, evidentiary rigor, and a steadfast commitment to ethical practice.</p>
+  <p>I am seeking to contribute my expertise to reinforce regulatory standards and advance consumer protection through disciplined legal and investigative excellence.
+</p>
+  <p>Sincerely,<br><strong>Livie Grimaldi</strong></p>
+ </div>
+</section>
+
+
+
+
+<!-- Resume -->
+<section id="resume">
+ <h2>Resume</h2>
+ <div class="resume">
+  <h3>Profile Summary</h3>
+  <p>
+   Accomplished Real Estate Broker, former Mortgage Agent, and Regulatory Investigator with over a decade of professional experience in brokerage operations, compliance enforcement, and consumer protection under REBBA, TRESA, and FSRA frameworks. Skilled in identifying systemic non-compliance, commission circumvention, and fraudulent practices within the real estate and mortgage sectors. Recognized for leading independent investigations, drafting evidentiary reports, and supporting regulatory actions with precision and legal discipline.
+  </p>
+
+  <h3>Core Qualifications</h3>
+  <ul>
+   <li>Comprehensive understanding of REBBA, TRESA, FSRA, and MBLAA compliance frameworks.</li>
+   <li>Extensive experience in brokerage audits, trust account reconciliation, and ethics enforcement.</li>
+   <li>Proven record in civil enforcement drafting — Statements of Claim, Affidavits, and Norwich Orders.</li>
+   <li>Strong financial acumen in real estate investment, commercial financing, and development planning.</li>
+   <li>Strategic negotiation, documentation, and stakeholder communication across multi-party disputes.</li>
+   <li>Demonstrated leadership as Broker of Record overseeing multi-brokerage compliance programs.</li>
+  </ul>
+
+  <h3>Education & Certifications</h3>
+  <ul>
+   <li>UBC — Real Estate License/Urban Land Economics (DULE)</li>
+   <li>OREA Broker of Record Certificate — Ontario Real Estate College</li>
+   <li>FSRA Mortgage Agent License (former)</li>
+   <li>ILCO/George Brown – Law Clerk Certification</li>
+   <li>PMP Certified Courses — Project Management Fundamentals</li>
+   <li>CAD Design and Property Management Training</li>
+  </ul>
+
+  <h3>Key Competencies</h3>
+  <ul>
+   <li>Brokerage Auditing & Compliance Oversight</li>
+   <li>Legal Drafting & Regulatory Submissions</li>
+   <li>Fraud, Misrepresentation & Fiduciary Breach Investigations</li>
+   <li>Trust Account Analysis & Commission Tracking</li>
+   <li>Civil Litigation Support & Evidentiary Preparation</li>
+   <li>Regulatory Advocacy & Consumer Protection</li>
+  </ul>
+ </div>
+</section>
+
+<!-- Experience -->
+<section id="experience">
+ <h2>Relevant Experience</h2>
+ <div class="timeline">
+
+  <div class="timeline-item">
+   <h3>Independent Broker & Compliance Consultant (2017 – Present)</h3>
+   <p><strong>Luvesta Group Realty Corp. / Luxe International Realty – Ontario</strong></p>
+   <ul>
+    <li>Conducted comprehensive compliance audits uncovering systemic REBBA and FSRA breaches.</li>
+    <li>Filed and managed civil enforcement actions addressing commission fraud and fiduciary violations.</li>
+    <li>Prepared evidentiary packages including affidavits, Statements of Claim, and motion records.</li>
+    <li>Developed proprietary 3D/Metaverse real estate visualization platform for transparent marketing.</li>
+    <li>Advised clients and regulatory counsel on compliance gaps and remedial strategies.</li>
+   </ul>
+  </div>
+
+  <div class="timeline-item">
+   <h3>Broker of Record (2022 – Present)</h3>
+   <p><strong>Luvesta Group Realty Corp. – Vaughan, Ontario</strong></p>
+   <ul>
+    <li>Directed brokerage operations ensuring full RECO and TRESA compliance across all transactions.</li>
+    <li>Supervised agent conduct, advertising, and disclosure practices under REBBA and FSRA standards.</li>
+    <li>Implemented internal compliance manuals, training programs, and trust audit procedures.</li>
+    <li>Served as primary contact for regulatory correspondence, inquiries, and enforcement responses.</li>
+   </ul>
+  </div>
+
+  <div class="timeline-item">
+   <h3>Mortgage Agent & Compliance Liaison (2017 – 2023)</h3>
+   <p><strong>Mortgage Centre / Pilrock Mortgages – Ontario</strong></p>
+   <ul>
+    <li>Reviewed broker files ensuring compliance with MBLAA and FSRA consumer disclosure mandates.</li>
+    <li>Identified recurring commission concealment schemes and dual-representation conflicts.</li>
+    <li>Coordinated with lenders, lawyers, and underwriters on complex mortgage approvals.</li>
+    <li>Developed internal reporting framework to document lender incentive irregularities.</li>
+   </ul>
+  </div>
+
+ </div>
+</section>
+
+
+<!-- Lawsuits Section -->
+<section id="lawsuits">
+  <h2>Lawsuits / Orders/ Fraud Reports</h2>
+  <div class="lawsuits">
+
+    <div class="lawsuit-card">
+      <h3>Urban Capital Corp Fraud Report</h3>
+      <p>Urban Capital Ltd fraudulently misrepresented themselves as Urban Capital under RECO.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Livie Grimaldi procured a report for Taya Cook, informing her of the misrepresentation made by Paul Hunter to RECO, and breaching REBBA Code of Ethics provisions related to disclosure advertising guidelines.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
+      </div>
+    </div>
+
+    <div class="lawsuit-card">
+      <h3>RE/MAX Ultimate Realty Lease Case</h3>
+      <p>Non-disclosure of material defects and fraudulent misrepresentation in a $37,500 lease transaction.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Filed against brokerage and landlord for concealing known defects, violating fiduciary duties, and breaching REBBA Code of Ethics provisions related to disclosure and fair dealing.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
+      </div>
+    </div>
+
+    <div class="lawsuit-card">
+      <h3>Colliers Commission Circumvention</h3>
+      <p>Misuse of Broker of Record license and unjust enrichment.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Investigation uncovered internal commission rerouting and non-disclosure of referral agreements, constituting violations under TRESA and breach of fiduciary obligations to cooperating brokerages.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
+      </div>
+    </div>
+
+    <div class="lawsuit-card">
+      <h3>Class Action – The Mortgage Centre Canada / iBrokerPower </h3>
+      <p>Systemic commission concealment and fiduciary breach affecting mortgage and real estate professionals.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Proposed class action alleging systemic concealment of lender-paid trailer fees, volume bonuses, and undisclosed incentives. The proceeding names The Mortgage Centre Canada Inc., iBrokerPower Inc., Ronald K. S. Lee, and related entities.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View Filing</a>
+      </div>
+    </div>
+
+    <div class="lawsuit-card">
+  <h3>Norwich Order Motion – Evidence Preservation</h3>
+  <p>
+    Application to compel disclosure of financial and electronic records relevant to fraud tracing. 
+    <a href="https://legalservicesontario.github.io/mccfraudexposed/" target="_blank">
+      https://legalservicesontario.github.io/mccfraudexposed/
+    </a>
+  </p>
+  <button class="expand-btn">Expand Details</button>
+  <div class="case-details">
+    <p>
+      Motion brought under equitable jurisdiction to obtain disclosure from banks and brokerages for evidence preservation and tracing of diverted commissions, facilitating subsequent civil recovery and regulatory action.
+    </p>
+    <a href="#" target="_blank" class="pdf-link">📄 View Order</a>
+  </div>
+</div>
+
+
+    <div class="lawsuit-card">
+      <h3>IBrokerpower Capital – Commission Fraud/Real Estate fraud </h3>
+      <p>Ronald Lee principal broker of Mortgage Centre/ Ibrokerpower Capital Inc., diverted commissions, embezelled funds,planned CRA tax fraud, civil fraud schemes and enaged in real estate Fraud.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Motion brought under equitable jurisdiction to obtain disclosure from banks and brokerages for evidence preservation and tracing of diverted commissions, facilitating subsequent civil recovery and regulatory action.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View Order</a>
+      </div>
+    </div>
+    <div class="lawsuit-card">
+      <h3>Milborne Real Estate – Sexual Misconduct & Commission Fraud</h3>
+      <p>Allegations of fiduciary breach, harassment, and commission circumvention within developer sales teams.</p>
+      <button class="expand-btn">Expand Details</button>
+      <div class="case-details">
+        <p>Statement of claim filed citing misconduct in sales environments, breach of duty of care, and commission diversion schemes contrary to TRESA fiduciary standards.</p>
+        <a href="#" target="_blank" class="pdf-link">📄 View Statement</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.lawsuit-card {
+  background:#2e2e2e;
+  padding:1.5rem;
+  border-radius:12px;
+  transition:all 0.3s ease;
+  border:1px solid #3a3a3a;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  position:relative;
+  overflow:hidden;
+}
+.lawsuit-card:hover {
+  transform:translateY(-3px);
+  border-color:#FFD700;
+  box-shadow:0 6px 16px rgba(0,0,0,0.5);
+}
+.lawsuit-card h3 {
+  color:#FFD700;
+  margin-bottom:.5rem;
+}
+.lawsuit-card p {
+  color:#e0e0e0;
+}
+.expand-btn {
+  background:none;
+  border:none;
+  color:#FFD700;
+  font-weight:600;
+  margin-top:0.8rem;
+  cursor:pointer;
+  transition:color 0.3s;
+}
+.expand-btn:hover {color:#fff;}
+.case-details {
+  display:none;
+  margin-top:1rem;
+  padding-top:1rem;
+  border-top:1px solid #444;
+  animation:fadeIn 0.4s ease forwards;
+}
+.case-details p {
+  margin-bottom:0.5rem;
+  color:#ccc;
+  line-height:1.5;
+}
+.pdf-link {
+  display:inline-block;
+  margin-top:0.5rem;
+  color:#FFD700;
+  font-weight:600;
+}
+.pdf-link:hover {text-decoration:underline;}
+@keyframes fadeIn {
+  from{opacity:0;transform:translateY(-5px);}
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+
+<script>
+// Expand/Collapse toggle
+document.querySelectorAll('.expand-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const details = btn.nextElementSibling;
+    details.style.display = details.style.display === 'block' ? 'none' : 'block';
+    btn.textContent = details.style.display === 'block' ? 'Hide Details' : 'Expand Details';
+  });
+});
+</script>
+
+
+
+<!-- Contact -->
+<section id="contact">
+ <h2>Contact Livie Grimaldi Below for Interview </h2>
+ <div class="contact">
+  <p>YOU MAY EMAIL ME OR REACH OUT VIA LINKEDIN .</p>
+  <a href="mailto:livie.grimaldi@gmail.com">Email</a>
+  <a href="https://www.linkedin.com/in/liviegrimaldi" target="_blank">LinkedIn</a>
+ </div>
+</section>
+
+<!-- === Instant Chat Widget === -->
+<div id="chat-widget">
+ <button id="chat-toggle">💬 Chat with Livie</button>
+ <div id="chat-box">
+  <form id="chat-form" action="https://formspree.io/f/xrbyajnk" method="POST">
+   <h4>Instant Chat</h4>
+   <input type="text" name="name" placeholder="Your Name" required>
+   <textarea name="message" rows="4" placeholder="Type your message…" required></textarea>
+   <button type="submit">Send Message</button>
+  </form>
+  <p class="chat-note">Messages go directly to Livie — you’ll get a reply by email soon.</p>
+ </div>
+</div>
+
+<footer>
+ <p>&copy; 2025 Livie Grimaldi | All Rights Reserved</p>
+</footer>
+
+<script>
+/* Scroll reveal */
+function revealOnScroll(){
+ const items=document.querySelectorAll('.timeline-item,.resume,.cover-letter,.lawsuit-card');
+ const triggerBottom=window.innerHeight*0.85;
+ items.forEach(item=>{
+  const top=item.getBoundingClientRect().top;
+  if(top<triggerBottom){item.classList.add('visible');}
+ });
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
+
+/* Chat toggle */
+const chatToggle=document.getElementById('chat-toggle');
+const chatBox=document.getElementById('chat-box');
+chatToggle.addEventListener('click',()=>{
+ chatBox.style.display=chatBox.style.display==='block'?'none':'block';
+});
+
+/* Chat submit success notice */
+document.getElementById('chat-form').addEventListener('submit',function(e){
+ setTimeout(()=>{
+  alert('Message sent successfully! Livie will reply by email.');
+  chatBox.style.display='none';
+ },500);
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
