@@ -3,431 +3,836 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Livie Grimaldi | Real Estate Broker & Compliance Expert</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:#1a1a1a;color:#f0f0f0;line-height:1.6;}
-a{color:#FFD700;text-decoration:none;}
-a:hover{text-decoration:underline;}
 
-/* Navbar */
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:#4B0082;position:sticky;top:0;z-index:1000;}
-nav .logo{font-size:1.5rem;font-weight:700;color:#FFD700;}
-nav ul{list-style:none;display:flex;gap:2rem;}
-nav ul li{font-weight:600;}
-nav ul li a{color:#f0f0f0;}
-nav ul li a:hover{color:#FFD700;}
+<title>Executive Admissions Portfolio | Livie Grimaldi | Fanshawe College</title>
 
-/* Hero */
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
-background:linear-gradient(135deg,#4B0082,#2E0854 60%,#FFD700);}
-.hero h1{font-size:3rem;font-weight:700;margin-bottom:1rem;color:#fff;text-shadow:0 0 10px rgba(0,0,0,0.4);}
-.hero p{font-size:1.2rem;max-width:700px;margin-bottom:2rem;color:#f0f0f0;}
-.hero .cta{background:#FFD700;color:#4B0082;padding:1rem 2rem;border-radius:50px;font-weight:700;transition:.3s;}
-.hero .cta:hover{background:#fff;color:#4B0082;cursor:pointer;transform:translateY(-3px);}
+<link rel="stylesheet" href="style.css">
 
-/* Sections */
-section{padding:4rem 10%;border-bottom:1px solid #333;}
-section h2{font-size:2rem;color:#FFD700;margin-bottom:1.5rem;border-bottom:2px solid #FFD700;display:inline-block;padding-bottom:.3rem;}
+<meta name="description" content="Executive Admissions Portfolio of Livie Grimaldi for the Health Systems Management program at Fanshawe College.">
 
-/* Resume & Cover Letter */
-.resume,.cover-letter{background:#2e2e2e;padding:2rem;border-radius:10px;margin-bottom:2rem;opacity:0;transform:translateY(50px);transition:all 1s ease;}
-.resume.visible,.cover-letter.visible{opacity:1;transform:translateY(0);}
-.resume h3,.cover-letter h3{color:#FFD700;margin-bottom:1rem;}
-.resume ul,.cover-letter ul{list-style:disc;margin-left:2rem;}
-.resume li,.cover-letter li{margin-bottom:.5rem;}
-
-/* Timeline */
-.timeline{position:relative;margin-left:1rem;}
-.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:4px;background:#FFD700;}
-.timeline-item{margin-bottom:2rem;position:relative;padding-left:50px;opacity:0;transform:translateX(-50px);transition:all 1s ease;}
-.timeline-item.visible{opacity:1;transform:translateX(0);}
-.timeline-item::before{content:'';position:absolute;left:11px;top:0;width:18px;height:18px;background:#FFD700;border-radius:50%;}
-
-/* Lawsuit Cards */
-.lawsuits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
-.lawsuit-card{background:#2e2e2e;padding:1.5rem;border-radius:10px;transition:transform .3s,box-shadow .3s;opacity:0;transform:scale(0.9);}
-.lawsuit-card.visible{opacity:1;transform:scale(1);}
-.lawsuit-card:hover{transform:scale(1.05);box-shadow:0 0 15px rgba(255,215,0,0.4);}
-.lawsuit-card h3{color:#FFD700;margin-bottom:.5rem;}
-.lawsuit-card a{font-weight:600;}
-
-/* Contact */
-.contact{text-align:center;}
-.contact a{margin:0 1rem;font-size:1.5rem;color:#FFD700;}
-.contact a:hover{color:#fff;}
-
-/* Footer */
-footer{text-align:center;padding:2rem;background:#4B0082;color:#FFD700;}
-
-/* ===== Chat Widget ===== */
-#chat-widget{position:fixed;bottom:20px;right:20px;z-index:1000;}
-#chat-toggle{
- background:#4B0082;color:#FFD700;padding:0.9rem 1.5rem;border-radius:50px;
- font-weight:700;border:none;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.6);
- transition:all .3s;}
-#chat-toggle:hover{background:#FFD700;color:#4B0082;transform:translateY(-2px);}
-#chat-box{
- display:none;position:absolute;bottom:70px;right:0;background:#2a1b3d;color:#fff;
- border-radius:10px;padding:1rem;width:320px;box-shadow:0 0 12px rgba(0,0,0,0.8);
-}
-#chat-box form{display:flex;flex-direction:column;gap:.6rem;}
-#chat-box h4{color:#FFD700;text-align:center;margin-bottom:.5rem;}
-#chat-box input,#chat-box textarea{
- background:#1f1f1f;border:1px solid #333;border-radius:6px;color:#fff;padding:.6rem;
-}
-#chat-box button{
- background:#FFD700;color:#4B0082;border:none;padding:.7rem;border-radius:6px;
- font-weight:700;cursor:pointer;transition:.3s;}
-#chat-box button:hover{background:#fff;color:#4B0082;}
-.chat-note{font-size:.8rem;color:#ccc;margin-top:.4rem;text-align:center;}
-
-/* Responsive */
-@media(max-width:768px){
- nav ul{flex-direction:column;gap:1rem;}
- .hero h1{font-size:2rem;}
- section{padding:3rem 5%;}
-}
-</style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav>
- <div class="logo">Livie Grimaldi</div>
- <ul>
-  <li><a href="#cover-letter">Cover Letter</a></li>
-  <li><a href="#resume">Resume</a></li>
-  <li><a href="#experience">Experience</a></li>
-  <li><a href="#lawsuits/Reports">Lawsuits</a></li>
-  <li><a href="#contact">Contact</a></li>
- </ul>
-</nav>
+<header class="hero-section">
 
-<!-- Hero -->
-<section class="hero">
- <h1>Real Estate Broker & Compliance Investigator</h1>
- <p>Specializing in REBBA, TRESA and FSRA compliance, consumer protection and systemic fraud investigations within the real estate and mortgage sector.</p>
- <a href="#contact" class="cta">Contact Me</a>
-</section>
+<h1>Executive Admissions Portfolio</h1>
 
-<!-- Cover Letter -->
-<section id="cover-letter">
- <h2>Cover Letter</h2>
- <div class="cover-letter">
-  <p>Dear RECO Team,</p>
-  <p>I am a licensed Real Estate Broker and former Mortgage Agent with over a decade of experience in brokerage operations, compliance audits, and consumer protection under the REBBA, TRESA, and FSRA frameworks.</p>
-  <p>Through independent investigations, I have identified breaches of fiduciary duty, commission fraud and circumvention, fraudulent misrepresentation, and the non-disclosure of material facts. I have drafted civil enforcement actions and regulatory submissions with precision, evidentiary rigor, and a steadfast commitment to ethical practice.</p>
-  <p>I am seeking to contribute my expertise to reinforce regulatory standards and advance consumer protection through disciplined legal and investigative excellence.
+<h2>Livie Grimaldi</h2>
+
+<h3>Health Systems Management Applicant</h3>
+
+<p>
+Combining over twenty years of executive leadership, regulatory compliance,
+healthcare administration, technology integration, and lifelong learning to
+contribute to the future of healthcare systems in Ontario.
 </p>
-  <p>Sincerely,<br><strong>Livie Grimaldi</strong></p>
- </div>
+
+<a class="cta-btn" href="#profile">
+Executive Profile
+</a>
+
+<a class="cta-btn" href="#healthcare">
+Healthcare Experience
+</a>
+
+<a class="cta-btn" href="#technology">
+Technology Portfolio
+</a>
+
+<a class="cta-btn" href="#documents">
+Admissions Package
+</a>
+
+</header>
+
+<section class="resume-section">
+
+<h2>Executive Summary</h2>
+
+<p>
+
+Thank you for reviewing my application to the Health Systems Management program at Fanshawe College.
+
+Throughout my career I have embraced continuous education, leadership, innovation, and service. My professional journey spans engineering coordination, real estate development, financial services, regulatory compliance, project management, business ownership, and most recently healthcare administration.
+
+This portfolio demonstrates how each stage of my career has prepared me for the next chapter—supporting Ontario's healthcare system through modern management practices, digital health technologies, operational excellence, and lifelong learning.
+
+</p>
+
 </section>
 
+<section class="resume-section" id="profile">
 
+<h2>Portfolio At A Glance</h2>
 
+<ul class="timeline">
 
-<!-- Resume -->
-<section id="resume">
- <h2>Resume</h2>
- <div class="resume">
-  <h3>Profile Summary</h3>
-  <p>
-   Accomplished Real Estate Broker, former Mortgage Agent, and Regulatory Investigator with over a decade of professional experience in brokerage operations, compliance enforcement, and consumer protection under REBBA, TRESA, and FSRA frameworks. Skilled in identifying systemic non-compliance, commission circumvention, and fraudulent practices within the real estate and mortgage sectors. Recognized for leading independent investigations, drafting evidentiary reports, and supporting regulatory actions with precision and legal discipline.
-  </p>
+<li data-animate>
 
-  <h3>Core Qualifications</h3>
-  <ul>
-   <li>Comprehensive understanding of REBBA, TRESA, FSRA, and MBLAA compliance frameworks.</li>
-   <li>Extensive experience in brokerage audits, trust account reconciliation, and ethics enforcement.</li>
-   <li>Proven record in civil enforcement drafting — Statements of Claim, Affidavits, and Norwich Orders.</li>
-   <li>Strong financial acumen in real estate investment, commercial financing, and development planning.</li>
-   <li>Strategic negotiation, documentation, and stakeholder communication across multi-party disputes.</li>
-   <li>Demonstrated leadership as Broker of Record overseeing multi-brokerage compliance programs.</li>
-  </ul>
+<h3>20+ Years of Leadership</h3>
 
-  <h3>Education & Certifications</h3>
-  <ul>
-   <li>UBC — Real Estate License/Urban Land Economics (DULE)</li>
-   <li>OREA Broker of Record Certificate — Ontario Real Estate College</li>
-   <li>FSRA Mortgage Agent License (former)</li>
-   <li>ILCO/George Brown – Law Clerk Certification</li>
-   <li>PMP Certified Courses — Project Management Fundamentals</li>
-   <li>CAD Design and Property Management Training</li>
-  </ul>
+<p>
 
-  <h3>Key Competencies</h3>
-  <ul>
-   <li>Brokerage Auditing & Compliance Oversight</li>
-   <li>Legal Drafting & Regulatory Submissions</li>
-   <li>Fraud, Misrepresentation & Fiduciary Breach Investigations</li>
-   <li>Trust Account Analysis & Commission Tracking</li>
-   <li>Civil Litigation Support & Evidentiary Preparation</li>
-   <li>Regulatory Advocacy & Consumer Protection</li>
-  </ul>
- </div>
+Executive leadership across regulated industries, project management,
+operations, finance, compliance, and organizational development.
+
+</p>
+
+</li>
+
+<li data-animate>
+
+<h3>Broker of Record</h3>
+
+<p>
+
+Licensed Broker of Record responsible for regulatory compliance,
+professional standards, governance, and operational leadership.
+
+</p>
+
+</li>
+
+<li data-animate>
+
+<h3>Healthcare Administration</h3>
+
+<p>
+
+Hands-on experience supporting nephrology clinic administration using
+Accuro Electronic Medical Records, scheduling, chart management,
+documentation, and patient workflows.
+
+</p>
+
+</li>
+
+<li data-animate>
+
+<h3>Technology & Artificial Intelligence</h3>
+
+<p>
+
+Ongoing education in Python programming,
+artificial intelligence,
+automation,
+APIs,
+workflow optimization,
+and digital transformation.
+
+</p>
+
+</li>
+
+</ul>
+
 </section>
 
-<!-- Experience -->
-<section id="experience">
- <h2>Relevant Experience</h2>
- <div class="timeline">
+<section class="resume-section">
 
-  <div class="timeline-item">
-   <h3>Independent Broker & Compliance Consultant (2017 – Present)</h3>
-   <p><strong>Luvesta Group Realty Corp. / Luxe International Realty – Ontario</strong></p>
-   <ul>
-    <li>Conducted comprehensive compliance audits uncovering systemic REBBA and FSRA breaches.</li>
-    <li>Filed and managed civil enforcement actions addressing commission fraud and fiduciary violations.</li>
-    <li>Prepared evidentiary packages including affidavits, Statements of Claim, and motion records.</li>
-    <li>Developed proprietary 3D/Metaverse real estate visualization platform for transparent marketing.</li>
-    <li>Advised clients and regulatory counsel on compliance gaps and remedial strategies.</li>
-   </ul>
-  </div>
+<h2>Executive Profile</h2>
 
-  <div class="timeline-item">
-   <h3>Broker of Record (2022 – Present)</h3>
-   <p><strong>Luvesta Group Realty Corp. – Vaughan, Ontario</strong></p>
-   <ul>
-    <li>Directed brokerage operations ensuring full RECO and TRESA compliance across all transactions.</li>
-    <li>Supervised agent conduct, advertising, and disclosure practices under REBBA and FSRA standards.</li>
-    <li>Implemented internal compliance manuals, training programs, and trust audit procedures.</li>
-    <li>Served as primary contact for regulatory correspondence, inquiries, and enforcement responses.</li>
-   </ul>
-  </div>
+<p>
 
-  <div class="timeline-item">
-   <h3>Mortgage Agent & Compliance Liaison (2017 – 2023)</h3>
-   <p><strong>Mortgage Centre / Pilrock Mortgages – Ontario</strong></p>
-   <ul>
-    <li>Reviewed broker files ensuring compliance with MBLAA and FSRA consumer disclosure mandates.</li>
-    <li>Identified recurring commission concealment schemes and dual-representation conflicts.</li>
-    <li>Coordinated with lenders, lawyers, and underwriters on complex mortgage approvals.</li>
-    <li>Developed internal reporting framework to document lender incentive irregularities.</li>
-   </ul>
-  </div>
+My professional career has been built around managing complex systems,
+people, projects, confidential information,
+and regulatory environments.
 
- </div>
+For over two decades I have developed expertise in executive leadership,
+business operations,
+documentation,
+compliance,
+technology,
+financial analysis,
+project coordination,
+and organizational management.
+
+Healthcare represents a natural continuation of these experiences.
+
+I believe modern healthcare organizations require leaders who understand
+people,
+technology,
+information governance,
+continuous improvement,
+and operational excellence.
+
+Fanshawe College's Health Systems Management program represents the ideal opportunity to combine my executive experience with specialized healthcare education while preparing for leadership roles supporting healthcare delivery throughout Ontario.
+
+</p>
+
 </section>
 
+<section class="resume-section">
 
-<!-- Lawsuits Section -->
-<section id="lawsuits">
-  <h2>Lawsuits / Orders/ Fraud Reports</h2>
-  <div class="lawsuits">
+<h2>Why Health Systems Management?</h2>
 
-    <div class="lawsuit-card">
-      <h3>Urban Capital Corp Fraud Report</h3>
-      <p>Urban Capital Ltd fraudulently misrepresented themselves as Urban Capital under RECO.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Livie Grimaldi procured a report for Taya Cook, informing her of the misrepresentation made by Paul Hunter to RECO, and breaching REBBA Code of Ethics provisions related to disclosure advertising guidelines.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
-      </div>
-    </div>
+<p>
 
-    <div class="lawsuit-card">
-      <h3>RE/MAX Ultimate Realty Lease Case</h3>
-      <p>Non-disclosure of material defects and fraudulent misrepresentation in a $37,500 lease transaction.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Filed against brokerage and landlord for concealing known defects, violating fiduciary duties, and breaching REBBA Code of Ethics provisions related to disclosure and fair dealing.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
-      </div>
-    </div>
+My transition into healthcare administration is not a career change—it is the next logical step in an evolving professional journey.
 
-    <div class="lawsuit-card">
-      <h3>Colliers Commission Circumvention</h3>
-      <p>Misuse of Broker of Record license and unjust enrichment.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Investigation uncovered internal commission rerouting and non-disclosure of referral agreements, constituting violations under TRESA and breach of fiduciary obligations to cooperating brokerages.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View PDF Document</a>
-      </div>
-    </div>
+Each position I have held has strengthened skills directly applicable to healthcare leadership.
 
-    <div class="lawsuit-card">
-      <h3>Class Action – The Mortgage Centre Canada / iBrokerPower </h3>
-      <p>Systemic commission concealment and fiduciary breach affecting mortgage and real estate professionals.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Proposed class action alleging systemic concealment of lender-paid trailer fees, volume bonuses, and undisclosed incentives. The proceeding names The Mortgage Centre Canada Inc., iBrokerPower Inc., Ronald K. S. Lee, and related entities.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View Filing</a>
-      </div>
-    </div>
+</p>
 
-    <div class="lawsuit-card">
-  <h3>Norwich Order Motion – Evidence Preservation</h3>
-  <p>
-    Application to compel disclosure of financial and electronic records relevant to fraud tracing. 
-    <a href="https://legalservicesontario.github.io/mccfraudexposed/" target="_blank">
-      https://legalservicesontario.github.io/mccfraudexposed/
-    </a>
-  </p>
-  <button class="expand-btn">Expand Details</button>
-  <div class="case-details">
-    <p>
-      Motion brought under equitable jurisdiction to obtain disclosure from banks and brokerages for evidence preservation and tracing of diverted commissions, facilitating subsequent civil recovery and regulatory action.
-    </p>
-    <a href="#" target="_blank" class="pdf-link">📄 View Order</a>
-  </div>
+<ul>
+
+<li>Managing confidential legal and financial information</li>
+
+<li>Working within regulated professional environments</li>
+
+<li>Leading multidisciplinary teams</li>
+
+<li>Project management and organizational planning</li>
+
+<li>Technology implementation</li>
+
+<li>Documentation accuracy</li>
+
+<li>Compliance and governance</li>
+
+<li>Continuous professional education</li>
+
+<li>Process improvement</li>
+
+<li>Stakeholder communication</li>
+
+</ul>
+
+<p>
+
+Health Systems Management allows me to combine these experiences with healthcare-specific knowledge while contributing to efficient, patient-centered healthcare administration.
+
+</p>
+
+</section>
+
+<section class="resume-section">
+
+<h2>Career Journey</h2>
+
+<ul class="timeline">
+
+<li data-animate>
+
+<h3>Chapter One</h3>
+
+<h3>Engineering & Technical Foundation</h3>
+
+<strong>Shaw Stone & Webster</strong>
+
+<p>
+
+My early career established strong technical discipline through engineering coordination,
+technical documentation,
+CAD design,
+project reporting,
+and precision-based workflow management.
+
+These experiences developed analytical thinking,
+structured documentation,
+problem solving,
+and attention to detail.
+
+</p>
+
+</li>
+
+<li data-animate>
+
+<h3>Chapter Two</h3>
+
+<h3>Executive Leadership</h3>
+
+<strong>Luvesta Group Inc.</strong>
+
+<p>
+
+As founder,
+business owner,
+and Broker of Record,
+I managed complex residential and commercial development initiatives involving:
+
+</p>
+
+<ul>
+
+<li>Land acquisition</li>
+
+<li>Municipal approvals</li>
+
+<li>Stakeholder coordination</li>
+
+<li>Financial analysis</li>
+
+<li>Project management</li>
+
+<li>Regulatory compliance</li>
+
+<li>Business operations</li>
+
+<li>Leadership</li>
+
+<li>Client relations</li>
+
+</ul>
+
+</li>
+
+<li data-animate>
+
+<h3>Chapter Three</h3>
+
+<h3>Financial Services</h3>
+
+<strong>Mortgage Centre</strong>
+
+<p>
+
+Working within financial services strengthened my understanding of:
+
+</p>
+
+<ul>
+
+<li>Confidential documentation</li>
+
+<li>Privacy requirements</li>
+
+<li>Compliance</li>
+
+<li>Financial analysis</li>
+
+<li>Risk management</li>
+
+<li>Professional ethics</li>
+
+<li>Regulatory reporting</li>
+
+</ul>
+
+</li>
+
+<li data-animate>
+
+<h3>Chapter Four</h3>
+
+<h3>Healthcare Administration Transition</h3>
+
+<strong>Ontario Nephrology Clinic</strong>
+
+<p>
+
+This experience introduced me to clinical administration within an active healthcare environment.
+
+Training included:
+
+</p>
+
+<ul>
+
+<li>Accuro Electronic Medical Records</li>
+
+<li>Patient scheduling</li>
+
+<li>Appointment coordination</li>
+
+<li>Healthcare documentation</li>
+
+<li>Chart management</li>
+
+<li>Administrative workflows</li>
+
+<li>Privacy and confidentiality</li>
+
+<li>Clinical operations</li>
+
+</ul>
+
+<p>
+
+Working alongside healthcare professionals reinforced my commitment to supporting modern healthcare systems through strong administrative leadership, information management, and continuous improvement.
+
+</p>
+
+</li>
+
+</ul>
+
+</section>
+<section class="resume-section" id="credentials">
+
+<h2>Credential Library</h2>
+
+<p>
+My educational journey reflects a commitment to lifelong learning through professional licensing, university studies, healthcare administration, project management, and emerging technology.
+</p>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Broker of Record Certification
+</button>
+
+<div class="accordion-body">
+
+<p><strong>Regulatory Authority</strong></p>
+
+<p>
+Licensed Broker of Record responsible for brokerage leadership,
+governance, compliance, and professional accountability.
+</p>
+
+<p><em>Certificate available upon request.</em></p>
+
 </div>
 
-
-    <div class="lawsuit-card">
-      <h3>IBrokerpower Capital – Commission Fraud/Real Estate fraud </h3>
-      <p>Ronald Lee principal broker of Mortgage Centre/ Ibrokerpower Capital Inc., diverted commissions, embezelled funds,planned CRA tax fraud, civil fraud schemes and enaged in real estate Fraud.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Motion brought under equitable jurisdiction to obtain disclosure from banks and brokerages for evidence preservation and tracing of diverted commissions, facilitating subsequent civil recovery and regulatory action.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View Order</a>
-      </div>
-    </div>
-    <div class="lawsuit-card">
-      <h3>Milborne Real Estate – Sexual Misconduct & Commission Fraud</h3>
-      <p>Allegations of fiduciary breach, harassment, and commission circumvention within developer sales teams.</p>
-      <button class="expand-btn">Expand Details</button>
-      <div class="case-details">
-        <p>Statement of claim filed citing misconduct in sales environments, breach of duty of care, and commission diversion schemes contrary to TRESA fiduciary standards.</p>
-        <a href="#" target="_blank" class="pdf-link">📄 View Statement</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<style>
-.lawsuit-card {
-  background:#2e2e2e;
-  padding:1.5rem;
-  border-radius:12px;
-  transition:all 0.3s ease;
-  border:1px solid #3a3a3a;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
-  position:relative;
-  overflow:hidden;
-}
-.lawsuit-card:hover {
-  transform:translateY(-3px);
-  border-color:#FFD700;
-  box-shadow:0 6px 16px rgba(0,0,0,0.5);
-}
-.lawsuit-card h3 {
-  color:#FFD700;
-  margin-bottom:.5rem;
-}
-.lawsuit-card p {
-  color:#e0e0e0;
-}
-.expand-btn {
-  background:none;
-  border:none;
-  color:#FFD700;
-  font-weight:600;
-  margin-top:0.8rem;
-  cursor:pointer;
-  transition:color 0.3s;
-}
-.expand-btn:hover {color:#fff;}
-.case-details {
-  display:none;
-  margin-top:1rem;
-  padding-top:1rem;
-  border-top:1px solid #444;
-  animation:fadeIn 0.4s ease forwards;
-}
-.case-details p {
-  margin-bottom:0.5rem;
-  color:#ccc;
-  line-height:1.5;
-}
-.pdf-link {
-  display:inline-block;
-  margin-top:0.5rem;
-  color:#FFD700;
-  font-weight:600;
-}
-.pdf-link:hover {text-decoration:underline;}
-@keyframes fadeIn {
-  from{opacity:0;transform:translateY(-5px);}
-  to{opacity:1;transform:translateY(0);}
-}
-</style>
-
-<script>
-// Expand/Collapse toggle
-document.querySelectorAll('.expand-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const details = btn.nextElementSibling;
-    details.style.display = details.style.display === 'block' ? 'none' : 'block';
-    btn.textContent = details.style.display === 'block' ? 'Hide Details' : 'Expand Details';
-  });
-});
-</script>
-
-
-
-<!-- Contact -->
-<section id="contact">
- <h2>Contact Livie Grimaldi Below for Interview </h2>
- <div class="contact">
-  <p>YOU MAY EMAIL ME OR REACH OUT VIA LINKEDIN .</p>
-  <a href="mailto:livie.grimaldi@gmail.com">Email</a>
-  <a href="https://www.linkedin.com/in/liviegrimaldi" target="_blank">LinkedIn</a>
- </div>
-</section>
-
-<!-- === Instant Chat Widget === -->
-<div id="chat-widget">
- <button id="chat-toggle">💬 Chat with Livie</button>
- <div id="chat-box">
-  <form id="chat-form" action="https://formspree.io/f/xrbyajnk" method="POST">
-   <h4>Instant Chat</h4>
-   <input type="text" name="name" placeholder="Your Name" required>
-   <textarea name="message" rows="4" placeholder="Type your message…" required></textarea>
-   <button type="submit">Send Message</button>
-  </form>
-  <p class="chat-note">Messages go directly to Livie — you’ll get a reply by email soon.</p>
- </div>
 </div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Mortgage Licensing
+</button>
+
+<div class="accordion-body">
+
+<p>
+Licensed Mortgage Professional operating under Ontario's provincial
+regulatory framework with experience in compliance and financial services.
+</p>
+
+<p><em>Certificate available upon request.</em></p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+University of British Columbia Studies
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+University-level studies supporting professional development,
+analytical thinking,
+and business leadership.
+
+</p>
+
+<p><em>Transcript available upon request.</em></p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Corporate Law Clerk Studies
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Academic studies in legal documentation,
+procedures,
+regulatory compliance,
+and professional administration.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Project Management Coursework
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Formal coursework in project planning,
+stakeholder management,
+risk analysis,
+organizational leadership,
+and operational improvement.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Python Programming
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Applied programming education focused on automation,
+workflow development,
+and software solutions.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Artificial Intelligence
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Continuing education in Artificial Intelligence,
+workflow automation,
+prompt engineering,
+and business applications.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+Google Technology Certifications
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Google-issued certifications supporting digital literacy,
+cloud technology,
+and modern workplace solutions.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="resume-section">
+
+<h2>Alignment with Health Systems Management</h2>
+
+<p>
+
+My education and professional experience align closely with competencies required within healthcare administration.
+
+</p>
+
+<ul>
+
+<li>Healthcare administration</li>
+
+<li>Information governance</li>
+
+<li>Documentation accuracy</li>
+
+<li>Project management</li>
+
+<li>Operational leadership</li>
+
+<li>Regulatory compliance</li>
+
+<li>Privacy and confidentiality</li>
+
+<li>Stakeholder communication</li>
+
+<li>Technology adoption</li>
+
+<li>Continuous improvement</li>
+
+</ul>
+
+</section>
+
+<section class="resume-section" id="healthcare">
+
+<h2>Healthcare Administration Experience</h2>
+
+<p>
+
+My healthcare experience has centered on supporting clinical administrative workflows within a nephrology practice while learning the operational foundations of patient-centered healthcare delivery.
+
+</p>
+
+<h3>Clinical Administrative Training</h3>
+
+<ul>
+
+<li>Accuro Electronic Medical Record (EMR)</li>
+
+<li>Patient scheduling</li>
+
+<li>Appointment coordination</li>
+
+<li>Healthcare documentation</li>
+
+<li>Chart organization</li>
+
+<li>Administrative workflow support</li>
+
+<li>Privacy and confidentiality principles</li>
+
+<li>Clinical workflow observation</li>
+
+</ul>
+
+<p>
+
+Working directly within a healthcare environment strengthened my appreciation for the importance of communication, documentation, operational efficiency, and compassionate patient service.
+
+</p>
+
+</section>
+
+<section class="resume-section" id="technology">
+
+<h2>Technology & Artificial Intelligence</h2>
+
+<p>
+
+Technology has become a significant focus of my professional development.
+
+I continue to build practical skills that complement healthcare administration through programming, automation, artificial intelligence, and digital workflow design.
+
+</p>
+
+<ul>
+
+<li>Python Programming</li>
+
+<li>REST APIs</li>
+
+<li>Workflow Automation</li>
+
+<li>Artificial Intelligence Applications</li>
+
+<li>Website Development</li>
+
+<li>Business Process Improvement</li>
+
+<li>Digital Documentation Systems</li>
+
+<li>Technology Integration</li>
+
+</ul>
+
+<p>
+
+My goal is to combine healthcare administration with modern technology to improve operational efficiency, documentation quality, information governance, and patient service.
+
+</p>
+
+</section>
+
+<section class="resume-section">
+
+<h2>Professional Vision</h2>
+
+<ul>
+
+<li>Digital Health Transformation</li>
+
+<li>Health Information Management</li>
+
+<li>Artificial Intelligence Integration</li>
+
+<li>Operational Excellence</li>
+
+<li>Healthcare Information Governance</li>
+
+<li>Continuous Quality Improvement</li>
+
+<li>Patient-Centered Administration</li>
+
+</ul>
+
+<p>
+
+I believe future healthcare leaders must understand both human-centered care and emerging technologies that support clinical teams and improve organizational performance.
+
+</p>
+
+</section>
+
+<section class="resume-section">
+
+<h2>Professional Recommendations</h2>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+Dr. Poli Lekas — Physician Recommendation
+
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Recommendation supporting my professionalism,
+healthcare experience,
+and readiness for further education in healthcare administration.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+Marko Lekas — Healthcare Operations
+
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Recommendation describing my experience with Accuro EMR,
+clinical workflow,
+patient scheduling,
+and healthcare administrative support.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="accordion-item">
+
+<button class="accordion-header">
+
+Randy MacKay — Executive Leadership
+
+</button>
+
+<div class="accordion-body">
+
+<p>
+
+Professional reference based upon more than twenty years of collaboration highlighting leadership,
+integrity,
+adaptability,
+professionalism,
+and commitment to excellence.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="resume-section" id="documents">
+
+<h2>Admissions Package</h2>
+
+<ul>
+
+<li>Executive Admissions Portfolio</li>
+
+<li>Curriculum Vitae</li>
+
+<li>Statement of Intent</li>
+
+<li>Cover Letter</li>
+
+<li>Professional Certifications</li>
+
+<li>Academic Records</li>
+
+<li>Healthcare Recommendation Letters</li>
+
+<li>Executive References</li>
+
+</ul>
+
+<p>
+
+Additional documentation and supporting evidence are available upon request.
+
+</p>
+
+</section>
+
+<section class="resume-section">
+
+<h2>Closing Statement</h2>
+
+<p>
+
+Thank you for taking the time to review my application.
+
+Throughout my career I have remained committed to leadership, integrity, continuous education, and meaningful service.
+
+I am excited about the opportunity to join the Fanshawe College community and contribute my experience while continuing to grow as a future healthcare leader.
+
+I believe the Health Systems Management program represents the ideal environment to combine my executive background with specialized healthcare education, preparing me to support innovative, efficient, and patient-focused healthcare systems across Ontario.
+
+</p>
+
+</section>
 
 <footer>
- <p>&copy; 2025 Livie Grimaldi | All Rights Reserved</p>
+
+<p>
+
+Executive Admissions Portfolio
+
+<br>
+
+Livie Grimaldi
+
+<br>
+
+Applicant — Health Systems Management
+
+<br>
+
+Fanshawe College
+
+</p>
+
 </footer>
 
-<script>
-/* Scroll reveal */
-function revealOnScroll(){
- const items=document.querySelectorAll('.timeline-item,.resume,.cover-letter,.lawsuit-card');
- const triggerBottom=window.innerHeight*0.85;
- items.forEach(item=>{
-  const top=item.getBoundingClientRect().top;
-  if(top<triggerBottom){item.classList.add('visible');}
- });
-}
-window.addEventListener('scroll',revealOnScroll);
-window.addEventListener('load',revealOnScroll);
+<script src="script.js"></script>
 
-/* Chat toggle */
-const chatToggle=document.getElementById('chat-toggle');
-const chatBox=document.getElementById('chat-box');
-chatToggle.addEventListener('click',()=>{
- chatBox.style.display=chatBox.style.display==='block'?'none':'block';
-});
-
-/* Chat submit success notice */
-document.getElementById('chat-form').addEventListener('submit',function(e){
- setTimeout(()=>{
-  alert('Message sent successfully! Livie will reply by email.');
-  chatBox.style.display='none';
- },500);
-});
-</script>
 </body>
 </html>
-
 
 
 
